@@ -1,0 +1,17 @@
+{
+	"Category": [{
+		"title": "首页",
+		"path": "/",
+		"description": "博客列表"
+	},
+	{
+        "title" : "Linux",
+        "path": "linux",
+        "description": "Linux相关的文章"    
+	},
+	{
+        "title" : "Go",
+        "path": "go",
+        "description": "Go相关的文章"   
+	}]
+}

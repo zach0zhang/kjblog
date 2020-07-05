@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+#header div .um_span{
+	color: red;
+	font-size: 25px;
+	margin: 10px;
+}
+
+* {
+	margin: 0;
+	font-family:"Microsoft Yahei";
+	color: #666;
+}

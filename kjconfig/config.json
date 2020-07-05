@@ -1,0 +1,9 @@
+{
+    "WebName"           : "Zach Blog",
+    "Address"           : "0.0.0.0:8080",
+    "ReadTimeout"       : 10,
+    "WriteTimeout"       : 600,
+    "DocPath"           : "resources/blog-docs",
+    "LogFile"           : "kjblogLog.txt",
+    "LogOutputLevel"    : 0
+}

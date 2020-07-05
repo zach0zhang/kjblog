@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    {{ template "layouts/_head.html" . }}
+</head>
+
+<body class="d-flex flex-column h-100">
+	
+    {{ template "layouts/_header.html" . }}
+    <main class="flex-shrink-0 my-4">
+		<div class="container text-secondary">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="container p-3">
+						{{ if .BodyData.Articles }}
+						<ul class="list-unstyled article-list">
+							{{ range $index, $article := .BodyData.Articles }}
+							<li class="media mb-3">
+								<div class="media-body">
+									<h1 class="mb-1"><a class="text-dark" href="/article?Path={{ $article.Path }}">{{ $article.Title }} </a></h1>
+									<p>
+										<a class="text-secondary" href="{{ $article.HomePage }}">{{ $article.Author }}</a>
+										 &rarr; <small>update: {{ $article.UpdatedAt.Format "2006-01-02" }}</small>
+									</p>
+
+								</div>
+							</li>
+							{{ end }}
+						</ul>
+						{{ end }}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+    
+
+</body>
+
+</html>
