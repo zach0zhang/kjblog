@@ -62,8 +62,9 @@ func getArticlesSpecifiedCategory(category *Category) Articles {
 		}
 
 		fileName := info.Name()
+
 		ext := filepath.Ext(fileName)
-		if ext != ".md" {
+		if ext != ".md" || fileName == "README.md" {
 			continue
 		}
 
