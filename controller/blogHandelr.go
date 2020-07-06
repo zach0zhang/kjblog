@@ -57,7 +57,6 @@ func GetCategory(w http.ResponseWriter, r *http.Request) {
 		t.Execute(w, htmlData)
 	} else {
 		NotFound(w, r)
-		//http.Redirect(w, r, "/notfound", 302)
 	}
 }
 

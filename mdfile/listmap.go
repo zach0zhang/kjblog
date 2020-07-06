@@ -2,9 +2,10 @@ package mdfile
 
 import (
 	"errors"
-	"fmt"
 	"sort"
 	"strings"
+
+	"github.com/zach0zhang/kjblog/kjlog"
 )
 
 type ListMap struct {
@@ -51,8 +52,7 @@ func (list *ListMap) ArticlesByCategory(name string) Articles {
 func newListMap() *ListMap {
 	categoies, err := parseCategories()
 	if err != nil {
-		//kjlog.Error("parseCategories exec error: ", err)
-		fmt.Println(err)
+		kjlog.Error("parseCategories exec error: ", err)
 	}
 	list := ListMap{
 		Categories: categoies,
@@ -67,17 +67,12 @@ func (list *ListMap) initArticles() {
 	articles := make(Articles, 0)
 
 	for _, category := range list.Categories {
-		//fmt.Println(category.Path)
 		article := getArticlesSpecifiedCategory(&category)
 		mergeArticles := make(Articles, len(articles)+len(article))
 		copy(mergeArticles, articles)
 		copy(mergeArticles[len(articles):], article)
 		articles = mergeArticles
 	}
-
-	// for i, a := range articles {
-	// 	fmt.Println(i, a.Title)
-	// }
 
 	sort.Sort(&articles)
 	list.Articles = articles

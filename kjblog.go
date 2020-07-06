@@ -56,18 +56,16 @@ func init() {
 
 	mdfile.Model = mdfile.Listnew()
 
-	fmt.Println(kjconfig.Cfg)
+	kjlog.Debug(kjconfig.Cfg)
 }
 
 func main() {
 	fmt.Println("kjbolg", version(), "started at", kjconfig.Cfg.Address)
 
-	//fmt.Println(kjconfig.Cfg)
-
 	mux := http.NewServeMux()
 
-	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("resources/static"))))
-	mux.Handle("/pages/", http.StripPrefix("/pages/", http.FileServer(http.Dir("resources/pages"))))
+	//mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("resources/static"))))
+	//mux.Handle("/pages/", http.StripPrefix("/pages/", http.FileServer(http.Dir("resources/pages"))))
 
 	mux.HandleFunc("/", controller.Index)
 	mux.HandleFunc("/notfound", controller.NotFound)

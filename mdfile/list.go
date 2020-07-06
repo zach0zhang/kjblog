@@ -3,6 +3,8 @@ package mdfile
 import (
 	"encoding/json"
 	"os"
+
+	"github.com/zach0zhang/kjblog/kjlog"
 )
 
 var Model List
@@ -51,6 +53,8 @@ func parseCategories() (Categories, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	kjlog.Debug(jsonData)
 
 	return jsonData.Category, nil
 }

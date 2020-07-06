@@ -5,5 +5,5 @@
     "WriteTimeout"       : 600,
     "DocPath"           : "resources/blog-docs",
     "LogFile"           : "kjblogLog.txt",
-    "LogOutputLevel"    : 0
+    "LogOutputLevel"    : 1
 }

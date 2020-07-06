@@ -1,7 +1,6 @@
 package mdfile
 
 import (
-	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -45,11 +44,10 @@ type Article struct {
 
 func getArticlesSpecifiedCategory(category *Category) Articles {
 	path := filepath.Join(kjconfig.Cfg.DocPath, category.Path)
-	//fmt.Println(path)
-	//fmt.Println(kjconfig.Cfg.DocPath)
+
 	filesInfo, err := ioutil.ReadDir(path)
 	if os.IsNotExist(err) || len(filesInfo) == 0 {
-		fmt.Println("is not exist or filesinfo == 0")
+		kjlog.Warning(path, "is not exist or the length of files is 0")
 		return nil
 	}
 
@@ -70,6 +68,7 @@ func getArticlesSpecifiedCategory(category *Category) Articles {
 
 		article := getArticleContent(filepath.Join(path, fileName))
 		if reflect.DeepEqual(article, Article{}) {
+			kjlog.Info(filepath.Join(path, fileName), "get article failed")
 			continue
 		}
 
