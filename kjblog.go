@@ -71,6 +71,7 @@ func main() {
 	mux.HandleFunc("/notfound", controller.NotFound)
 	mux.HandleFunc("/category", controller.GetCategory)
 	mux.HandleFunc("/article", controller.GetArticle)
+	mux.HandleFunc("/getImage", controller.GetImage)
 
 	server := &http.Server{
 		Addr:           kjconfig.Cfg.Address,
