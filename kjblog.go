@@ -64,7 +64,7 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	//mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("resources/static"))))
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("resources/static"))))
 	//mux.Handle("/pages/", http.StripPrefix("/pages/", http.FileServer(http.Dir("resources/pages"))))
 
 	mux.HandleFunc("/", controller.Index)
