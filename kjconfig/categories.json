@@ -10,8 +10,8 @@
         "description": "Linux相关的文章"    
 	},
 	{
-        "title" : "Go",
-        "path": "go",
-        "description": "Go相关的文章"   
+        "title" : "嵌入式",
+        "path": "embedded",
+        "description": "嵌入式相关的文章"   
 	}]
 }
