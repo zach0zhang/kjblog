@@ -10,8 +10,18 @@
         "description": "Linux相关的文章"    
 	},
 	{
-        "title" : "嵌入式",
+        "title": "嵌入式",
         "path": "embedded",
         "description": "嵌入式相关的文章"   
+	},
+	{
+		"title": "机器学习",
+		"path": "machineLearning",
+		"description": "机器学习的相关文章"
+	},
+	{
+		"title": "区块链",
+		"path": "blockchain",
+		"description": "区块链的相关文章"
 	}]
 }
